@@ -1,0 +1,53 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Dataset directories
+data/
+dataset/
+datasets/
+mvtec/
+mvtec_ad/
+MVTecAD/
+
+# Model checkpoints and exported models
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.engine
+*.trt
+
+# Keep models/README.md, but ignore model files inside models/
+models/*
+!models/README.md
+
+# Experiment outputs
+checkpoints/
+outputs/
+results/
+runs/
+lightning_logs/
+wandb/
+mlruns/
+logs/
+*.log
+
+# OS / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Media files
+*.mp4
+*.mov
+*.avi
+*.mkv

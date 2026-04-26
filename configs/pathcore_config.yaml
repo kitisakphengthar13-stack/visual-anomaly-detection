@@ -1,0 +1,48 @@
+# Project configuration summary.
+# The current training and inference scripts use hard-coded local paths.
+# Update the script paths or refactor the scripts to load values from this file.
+
+project:
+  name: "visual_anomaly_detection"
+  task: "industrial_visual_anomaly_detection"
+
+dataset:
+  name: "MVTec AD"
+  category: "cable"
+  root: "data/mvtec"
+
+model:
+  method: "PatchCore"
+  framework: "Anomalib"
+  backbone: "wide_resnet50_2"
+  feature_layers:
+    - "layer2"
+    - "layer3"
+  coreset_sampling_ratio: 1.0
+
+training:
+  train_batch_size: 12
+  eval_batch_size: 12
+  num_workers: 3
+  accelerator: "auto"
+  devices: 1
+
+inference:
+  checkpoint_path: "models/model.ckpt"
+  input_folder: "data/test_images"
+  image_extension: ".png"
+  threshold: 0.50
+
+visualization:
+  show_original: true
+  show_heatmap: true
+  show_overlay: true
+  heatmap_colormap: "jet"
+  overlay_alpha: 0.35
+  gaussian_blur_sigma: 2.0
+
+results:
+  image_auroc: 0.99
+  image_f1_score: 0.97
+  pixel_auroc: 0.98
+  pixel_f1_score: 0.64
