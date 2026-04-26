@@ -81,13 +81,29 @@ The threshold can be adjusted depending on the inspection requirement. A lower t
 
 ## Visualization Output
 
-For each test image, the system displays three outputs:
+For each test image, the system generates visualization output showing:
 
 1. Original image
 2. Anomaly heatmap
 3. Heatmap overlay on the original image
 
 These outputs help show not only whether a sample is classified as OK or NG, but also where the model identifies abnormal regions on the workpiece.
+
+---
+
+## Example Outputs
+
+### OK Samples
+
+![OK Sample Result 1](docs/images/ok_sample_result_1.png)
+
+![OK Sample Result 2](docs/images/ok_sample_result_2.png)
+
+### NG Samples
+
+![NG Sample Result 1](docs/images/ng_sample_result_1.png)
+
+![NG Sample Result 2](docs/images/ng_sample_result_2.png)
 
 ---
 
