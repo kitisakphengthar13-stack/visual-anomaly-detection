@@ -1,0 +1,13 @@
+# Visual Anomaly Detection with PatchCore
+#
+# Python-level dependencies for this project.
+# Install versions that are compatible with your Python, PyTorch, CUDA, and Anomalib environment.
+
+torch
+torchvision
+anomalib
+lightning
+opencv-python
+numpy
+matplotlib
+PyYAML

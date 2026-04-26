@@ -1,0 +1,58 @@
+# =========================================================
+# Visual Anomaly Detection with PatchCore — Configuration
+# =========================================================
+#
+# This file stores placeholder configuration values for the project.
+# Replace all path/to/... values with the actual paths used on your machine.
+
+project:
+  name: "visual_anomaly_detection"
+  description: "Visual anomaly detection for industrial inspection using PatchCore and Anomalib"
+  task: "anomaly_detection"
+
+dataset:
+  name: "MVTec AD Cable"
+  category: "cable"
+  root: "path/to/mvtec_ad"
+  image_size: 256
+  train_batch_size: 32
+  eval_batch_size: 32
+  num_workers: 4
+
+model:
+  name: "PatchCore"
+  backbone: "wide_resnet50_2"
+  layers:
+    - "layer2"
+    - "layer3"
+  pre_trained: true
+  coreset_sampling_ratio: 0.1
+  num_neighbors: 9
+
+training:
+  max_epochs: 1
+  accelerator: "auto"
+  devices: 1
+  default_root_dir: "path/to/results"
+
+checkpoint:
+  path: "path/to/model.ckpt"
+
+inference:
+  input_path: "path/to/input_image_or_folder"
+  output_dir: "path/to/output_dir"
+  threshold: 0.5
+  save_visualization: true
+
+metrics:
+  image_level:
+    - "AUROC"
+    - "F1Score"
+  pixel_level:
+    - "AUROC"
+    - "F1Score"
+
+notes:
+  - "The checkpoint file is not included in this repository."
+  - "Dataset files are not included in this repository."
+  - "Replace placeholder paths before running training or inference."
