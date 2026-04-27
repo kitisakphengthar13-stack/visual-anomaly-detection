@@ -226,7 +226,7 @@ python training/patchcore_training.py --data-root path/to/mvtec_ad --train-batch
 Run training with a custom coreset sampling ratio:
 
 ```bash
-python training/patchcore_training.py --data-root path/to/mvtec_ad --coreset-ratio 0.1
+python training/patchcore_training.py --data-root path/to/mvtec_ad --coreset-ratio 1.0
 ```
 
 ---
