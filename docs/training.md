@@ -40,7 +40,7 @@ Default placeholder values:
 | `--train-batch-size` | `32` | Training batch size |
 | `--eval-batch-size` | `32` | Evaluation batch size |
 | `--num-workers` | `4` | Number of dataloader workers |
-| `--coreset-ratio` | `0.1` | PatchCore coreset sampling ratio |
+| `--coreset-ratio` | `1.0` | PatchCore coreset sampling ratio |
 
 Example command:
 
