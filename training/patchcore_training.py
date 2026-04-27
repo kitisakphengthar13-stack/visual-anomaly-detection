@@ -74,7 +74,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--coreset-ratio",
         type=float,
-        default=0.1,
+        default=1.0,
         help="PatchCore coreset sampling ratio.",
     )
 

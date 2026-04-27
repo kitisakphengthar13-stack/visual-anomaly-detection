@@ -175,7 +175,7 @@ def main() -> None:
         backbone="wide_resnet50_2",
         layers=["layer2", "layer3"],
         pre_trained=True,
-        coreset_sampling_ratio=0.1,
+        coreset_sampling_ratio=1.0,
         num_neighbors=9,
     )
 

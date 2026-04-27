@@ -26,7 +26,7 @@ model:
     - "layer2"
     - "layer3"
   pre_trained: true
-  coreset_sampling_ratio: 0.1
+  coreset_sampling_ratio: 1.0
   num_neighbors: 9
 
 training:

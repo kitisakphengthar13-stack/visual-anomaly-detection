@@ -40,7 +40,7 @@ Please download the dataset separately and update the dataset path before traini
 - Framework: Anomalib
 - Backbone: Wide ResNet-50-2
 - Feature extraction layers: layer2, layer3
-- Coreset sampling ratio: 0.1
+- Coreset sampling ratio: 1.0
 - Number of nearest neighbors: 9
 
 Configuration reference:

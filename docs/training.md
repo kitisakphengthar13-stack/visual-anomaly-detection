@@ -108,7 +108,7 @@ The model configuration used in this project includes:
 | Backbone | `wide_resnet50_2` |
 | Feature layers | `layer2`, `layer3` |
 | Pretrained backbone | `True` |
-| Coreset sampling ratio | `0.1` |
+| Coreset sampling ratio | `1.0` |
 | Number of neighbors | `9` |
 
 ---
