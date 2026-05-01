@@ -4,7 +4,7 @@ PatchCore Inference Script
 This script performs visual anomaly detection using a trained PatchCore checkpoint.
 It supports image-level OK/NG prediction and pixel-level anomaly visualization.
 
-All paths are placeholders. Replace them with actual local paths before running.
+Default paths are examples. Replace them with actual local paths before running.
 """
 
 from pathlib import Path

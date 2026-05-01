@@ -1,8 +1,11 @@
 # =========================================================
-# Visual Anomaly Detection with PatchCore — Configuration
+# Visual Anomaly Detection with PatchCore - Configuration
 # =========================================================
 #
-# This file stores placeholder configuration values for the project.
+# This file stores reference/example configuration values for the project.
+# The current training and inference scripts use command-line arguments directly
+# and do not automatically load this YAML file unless that behavior is explicitly
+# wired into the code.
 # Replace all path/to/... values with the actual paths used on your machine.
 
 project:
@@ -55,4 +58,4 @@ metrics:
 notes:
   - "The checkpoint file is not included in this repository."
   - "Dataset files are not included in this repository."
-  - "Replace placeholder paths before running training or inference."
+  - "Replace example paths before running training or inference."

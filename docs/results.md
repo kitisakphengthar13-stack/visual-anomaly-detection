@@ -1,12 +1,10 @@
 # Results
 
-This document summarizes the evaluation results of **Visual Anomaly Detection with PatchCore** on the MVTec AD Cable dataset.
+This document summarizes the project evaluation results for Visual Anomaly Detection with PatchCore on the MVTec AD Cable dataset.
 
 The project evaluates both image-level anomaly detection and pixel-level anomaly localization.
 
----
-
-## 1. Performance Summary
+## Performance Summary
 
 | Metric | Result |
 |---|---:|
@@ -15,31 +13,39 @@ The project evaluates both image-level anomaly detection and pixel-level anomaly
 | Pixel AUROC | 98% |
 | Pixel F1-score | 64% |
 
-These results were obtained from the project evaluation on the MVTec AD Cable category.
+These values are reported as project evaluation results on the MVTec AD Cable category.
 
-The results may vary depending on environment, Anomalib version, threshold settings, preprocessing, and training configuration.
+## Reproducibility Notes
 
----
+Results may vary depending on:
 
-## 2. Example Outputs
+- Anomalib version
+- PyTorch and CUDA versions
+- Dataset split and local dataset contents
+- Checkpoint used for evaluation or inference
+- Threshold selection
+- Preprocessing and transforms from the installed Anomalib version
+- Hardware, operating system, and dependency environment
+
+Record these details when reproducing or comparing results.
+
+## Example Outputs
 
 The following examples show OK and NG prediction results with anomaly heatmap visualization.
 
 ### OK Samples
 
-![OK Sample Result 1](images/ok_sample_result_1.png)
+![OK Sample Result 1](assets/ok_sample_result_1.png)
 
-![OK Sample Result 2](images/ok_sample_result_2.png)
+![OK Sample Result 2](assets/ok_sample_result_2.png)
 
 ### NG Samples
 
-![NG Sample Result 1](images/ng_sample_result_1.png)
+![NG Sample Result 1](assets/ng_sample_result_1.png)
 
-![NG Sample Result 2](images/ng_sample_result_2.png)
+![NG Sample Result 2](assets/ng_sample_result_2.png)
 
----
-
-## 3. Image-Level Performance
+## Image-Level Performance
 
 Image-level metrics evaluate whether the model can classify an input image as normal or anomalous.
 
@@ -48,13 +54,9 @@ Image-level metrics evaluate whether the model can classify an input image as no
 | Image AUROC | Measures how well the model separates normal and anomalous images across thresholds |
 | Image F1-score | Measures the balance between precision and recall for OK/NG classification |
 
-The model achieved strong image-level performance, with **99% Image AUROC** and **97% Image F1-score**.
+The model achieved **99% Image AUROC** and **97% Image F1-score** in this project evaluation.
 
-This indicates that the model can separate normal and anomalous cable images effectively in this evaluation.
-
----
-
-## 4. Pixel-Level Performance
+## Pixel-Level Performance
 
 Pixel-level metrics evaluate how well the model localizes anomalous regions in the image.
 
@@ -65,11 +67,9 @@ Pixel-level metrics evaluate how well the model localizes anomalous regions in t
 
 The model achieved **98% Pixel AUROC**, showing that the anomaly map can rank abnormal pixels well.
 
-However, the **Pixel F1-score was 64%**, which is lower than the pixel-level AUROC. This is expected in many anomaly localization tasks because Pixel F1-score depends strongly on the selected threshold and the exact overlap between the predicted anomaly mask and the ground-truth defect mask.
+The **Pixel F1-score was 64%**, which is lower than the pixel-level AUROC. This is common in anomaly localization because Pixel F1-score depends strongly on the selected threshold and the exact overlap between the predicted anomaly mask and the ground-truth defect mask.
 
----
-
-## 5. OK/NG Threshold Decision
+## OK/NG Threshold Decision
 
 For demonstration, an anomaly score threshold of `0.5` is used to classify each image.
 
@@ -78,31 +78,24 @@ For demonstration, an anomaly score threshold of `0.5` is used to classify each 
 | Anomaly score < 0.50 | OK |
 | Anomaly score >= 0.50 | NG |
 
-The threshold can be adjusted depending on the inspection requirement.
+The threshold can be adjusted depending on the inspection requirement. A lower threshold increases sensitivity to defects but may increase false positives. A higher threshold reduces false positives but may miss subtle defects.
 
-A lower threshold increases sensitivity to defects but may increase false positives.  
-A higher threshold reduces false positives but may miss subtle defects.
+## Interpretation
 
----
+The evaluation results show strong image-level OK/NG classification on the MVTec AD Cable category for this project setup.
 
-## 6. Interpretation
+Pixel-level localization also shows strong ranking performance through Pixel AUROC, while the lower Pixel F1-score shows that threshold selection matters when converting anomaly maps into binary defect masks.
 
-The evaluation result shows that PatchCore performs well for image-level OK/NG classification on the MVTec AD Cable category.
-
-Pixel-level localization also shows strong ranking performance through Pixel AUROC, but the lower Pixel F1-score suggests that threshold selection is important when converting anomaly maps into binary defect masks.
-
-This reflects an important practical point in industrial inspection:
+Practical takeaway:
 
 ```text
 Image-level OK/NG classification and pixel-level defect localization may require different threshold settings.
 ```
 
-For real inspection use cases, the threshold should be selected based on the cost of false positives and false negatives.
+For real inspection use cases, threshold selection should consider the cost of false positives and false negatives.
 
----
-
-## 7. Notes
+## Notes
 
 The model checkpoint, dataset, and generated result folders are not included in this repository.
 
-The sample output images in `docs/images/` are included to demonstrate the anomaly heatmap and overlay visualization workflow.
+The sample output images in `docs/assets/` are included to demonstrate the anomaly heatmap and overlay visualization workflow.

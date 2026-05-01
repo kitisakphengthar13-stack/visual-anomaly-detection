@@ -4,7 +4,7 @@ PatchCore Training Script
 This script trains a PatchCore anomaly detection model using Anomalib
 on the MVTec AD Cable dataset.
 
-All paths are placeholders. Replace them with actual local paths before running.
+Default paths are examples. Replace them with actual local paths before running.
 """
 
 from multiprocessing import freeze_support

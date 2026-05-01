@@ -10,7 +10,7 @@ Actual model checkpoint files are not included in this repository due to file si
 
 After training, Anomalib generates checkpoint files that can be used for inference.
 
-Example placeholder checkpoint path:
+Example checkpoint path:
 
 ```text
 path/to/model.ckpt
